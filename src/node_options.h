@@ -119,6 +119,9 @@ class EnvironmentOptions : public Options {
   bool tls_v1_1 = false;
 #endif
 
+  std::vector<std::string> loader_modules;
+
+
   std::vector<std::string> preload_modules;
 
   std::vector<std::string> user_argv;

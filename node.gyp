@@ -150,6 +150,7 @@
       'lib/internal/modules/esm/default_resolve.js',
       'lib/internal/modules/esm/module_job.js',
       'lib/internal/modules/esm/module_map.js',
+      'lib/internal/modules/esm/threaded_loader.js',
       'lib/internal/modules/esm/translators.js',
       'lib/internal/net.js',
       'lib/internal/options.js',

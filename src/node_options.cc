@@ -99,7 +99,7 @@ void PerIsolateOptions::CheckOptions(std::vector<std::string>* errors) {
 }
 
 void EnvironmentOptions::CheckOptions(std::vector<std::string>* errors) {
-  if (!userland_loader.empty() && !experimental_modules) {
+  if (!loader_modules.empty() && !experimental_modules) {
     errors->push_back("--loader requires --experimental-modules be enabled");
   }
 
@@ -199,11 +199,6 @@ EnvironmentOptionsParser::EnvironmentOptionsParser() {
             "(default: llhttp).",
             &EnvironmentOptions::http_parser,
             kAllowedInEnvironment);
-  AddOption("--loader",
-            "(with --experimental-modules) use the specified file as a "
-            "custom loader",
-            &EnvironmentOptions::userland_loader,
-            kAllowedInEnvironment);
   AddOption("--no-deprecation",
             "silence deprecation warnings",
             &EnvironmentOptions::no_deprecation,
@@ -270,6 +265,10 @@ EnvironmentOptionsParser::EnvironmentOptionsParser() {
             "evaluate script and print result",
             &EnvironmentOptions::print_eval);
   AddAlias("-e", "--eval");
+  AddOption("--loader",
+            "module to use as loader",
+            &EnvironmentOptions::loader_modules,
+            kAllowedInEnvironment);
   AddAlias("--print <arg>", "-pe");
   AddAlias("-pe", { "--print", "--eval" });
   AddAlias("-p", "--print");
