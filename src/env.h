@@ -246,6 +246,7 @@ constexpr size_t kFsStatsBufferLength = kFsStatsFieldsNumber * 2;
   V(output_string, "output")                                                   \
   V(parse_error_string, "Parse Error")                                         \
   V(password_string, "password")                                               \
+  V(parameters_string, "parameters")                                           \
   V(path_string, "path")                                                       \
   V(pending_handle_string, "pendingHandle")                                    \
   V(pid_string, "pid")                                                         \
@@ -292,6 +293,7 @@ constexpr size_t kFsStatsBufferLength = kFsStatsFieldsNumber * 2;
   V(stdio_string, "stdio")                                                     \
   V(subject_string, "subject")                                                 \
   V(subjectaltname_string, "subjectaltname")                                   \
+  V(subtype_string, "subtype")                                                 \
   V(syscall_string, "syscall")                                                 \
   V(thread_id_string, "threadId")                                              \
   V(ticketkeycallback_string, "onticketkeycallback")                           \
